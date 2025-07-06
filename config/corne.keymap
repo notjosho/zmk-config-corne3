@@ -44,13 +44,13 @@
 // -----------------------------------------------------------------------------------------
 // | BTCLR| _F1 | _F2 | _F3 | _F4 | _F5 |   |     | HOM | END | DEL | PRV | NXT |
 // | BT1  | _F6 | _F7 | _F8 | _F9 | F10 |   | LFT | DWN | _UP | RGT | VDN | VUP |
-// | BT2  | BT3 | BT4 | BT5 | F11 | F12 |   |     | PGD | PGU | INS | PLY | MUT |
+// | BT2  | BT3 | BT4 | BT5 | F11 | F12 |   | TO4 | PGD | PGU | INS | PLY | MUT |
 //                    |     |     |     |   |     |     |     |
 
     bindings = <
         &bt BT_CLR   &kp F1       &kp F2       &kp F3       &kp F4  &kp F5       &trans   &kp HOME  &kp END   &kp DEL   &kp C_PREV   &kp C_NEXT
         &bt BT_SEL 1 &kp F6       &kp F7       &kp F8       &kp F9  &kp F10      &kp LEFT &kp DOWN  &kp UP    &kp RIGHT &kp C_VOL_DN &kp C_VOL_UP
-        &bt BT_SEL 2 &bt BT_SEL 3 &bt BT_SEL 4 &bt BT_SEL 5 &kp F11 &kp F12      &trans   &kp PG_DN &kp PG_UP &kp INS   &kp C_PP     &kp C_MUTE
+        &bt BT_SEL 2 &bt BT_SEL 3 &bt BT_SEL 4 &bt BT_SEL 5 &kp F11 &kp F12      &to 3    &kp PG_DN &kp PG_UP &kp INS   &kp C_PP     &kp C_MUTE
                                                &trans       &trans  &trans       &trans   &trans    &trans
     >;
                 };
@@ -60,19 +60,15 @@
 // | TAB_ |  q  |  w  |  e  |  r  |  t  |   |  y  |  u  |  i  |  o  |  p  | BKSP |
 // | CTRL |  a  |  s  |  d  |  f  |  g  |   |  h  |  j  |  k  |  l  |  ;  |  '   |
 // | SHFT |  z  |  x  |  c  |  v  |  b  |   |  n  |  m  |  ,  |  .  |  /  | SHFT |
-//                    | ALT | mo4 | SPC |   | ENT | mo5 | mo6 |
+//                    | ALT | mo1 | SPC |   | ENT | mo2 | RALT|
 
   bindings = <
-        &kp TAB   &kp Q &kp W &kp E    &kp R &kp T        &kp Y   &kp U &kp I     &kp O   &kp P    &kp BSPC
-        &mt ESC   &kp A &kp S &kp D    &kp F &kp G        &kp H   &kp J &kp K     &kp L   &kp SEMI &kp SQT
-        &kp LSHFT &kp Z &kp X &kp C    &kp V &kp B        &kp N   &kp M &kp COMMA &kp DOT &kp FSLH &kp RSHFT
+        &kp TAB       &kp Q &kp W &kp E    &kp R &kp T        &kp Y   &kp U &kp I     &kp O   &kp P    &kp BSPC
+        &mt LCTRL ESC &kp A &kp S &kp D    &kp F &kp G        &kp H   &kp J &kp K     &kp L   &kp SEMI &kp SQT
+        &kp LSHFT     &kp Z &kp X &kp C    &kp V &kp B        &kp N   &kp M &kp COMMA &kp DOT &kp FSLH &kp RSHFT
                               &kp LALT &mo 1 &kp SPACE    &kp RET &mo 2 &kp RALT 
     >;
-};
-
-
-
-
+                };
 
         };
 };
