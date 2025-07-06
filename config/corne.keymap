@@ -86,9 +86,9 @@
 
                 raise_layer {
 // -----------------------------------------------------------------------------------------
-// | BTCLR| _F1 | _F2 | _F3 | _F4 | _F5 |   |     | HOM | END | DEL | PRV | NXT |
+// | BTCLR| _F1 | _F2 | _F3 | _F4 | _F5 |   | TO1 | HOM | END | DEL | PRV | NXT |
 // | BT1  | _F6 | _F7 | _F8 | _F9 | F10 |   | LFT | DWN | _UP | RGT | VDN | VUP |
-// | BT2  | BT3 | BT4 | BT5 | F11 | F12 |   | TO4 | PGD | PGU | INS | PLY | MUT |
+// | BT2  | BT3 | BT4 | BT5 | F11 | F12 |   | TO2 | PGD | PGU | INS | PLY | MUT |
 //                    |     |     |     |   |     |     |     |
 
     bindings = <
