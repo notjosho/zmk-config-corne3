@@ -87,14 +87,14 @@
                 raise_layer {
 // -----------------------------------------------------------------------------------------
 // | BTCLR| _F1 | _F2 | _F3 | _F4 | _F5 |   |     | HOM | END | DEL | PRV | NXT |
-// | BT1  | _F6 | _F7 | _F8 | _F9 | F10 |   | LFT | DWN | _UP | RGT | VDN | VUP |
-// | BT2  | BT3 | BT4 | BT5 | F11 | F12 |   |     | PGD | PGU | INS | PLY | MUT |
+// | BT0  | _F6 | _F7 | _F8 | _F9 | F10 |   | LFT | DWN | _UP | RGT | VDN | VUP |
+// | BT1  | BT2 | BT3 | BT4 | F11 | F12 |   |     | PGD | PGU | INS | PLY | MUT |
 //                    |     |     |     |   |     |     |     |
 
     bindings = <
         &bt BT_CLR   &kp F1       &kp F2       &kp F3       &kp F4  &kp F5       &trans   &kp HOME  &kp END   &kp DEL   &kp C_PREV   &kp C_NEXT
-        &bt BT_SEL 1 &kp F6       &kp F7       &kp F8       &kp F9  &kp F10      &kp LEFT &kp DOWN  &kp UP    &kp RIGHT &kp C_VOL_DN &kp C_VOL_UP
-        &bt BT_SEL 2 &bt BT_SEL 3 &bt BT_SEL 4 &bt BT_SEL 5 &kp F11 &kp F12      &trans   &kp PG_DN &kp PG_UP &kp INS   &kp C_PP     &kp C_MUTE
+        &bt BT_SEL 0 &kp F6       &kp F7       &kp F8       &kp F9  &kp F10      &kp LEFT &kp DOWN  &kp UP    &kp RIGHT &kp C_VOL_DN &kp C_VOL_UP
+        &bt BT_SEL 1 &bt BT_SEL 2 &bt BT_SEL 3 &bt BT_SEL 4 &kp F11 &kp F12      &trans   &kp PG_DN &kp PG_UP &kp INS   &kp C_PP     &kp C_MUTE
                                                &trans       &trans  &trans       &trans   &trans    &trans
     >;
                 };
