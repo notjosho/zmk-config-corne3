@@ -7,6 +7,7 @@
 #include <behaviors.dtsi>
 #include <dt-bindings/zmk/keys.h>
 #include <dt-bindings/zmk/bt.h>
+#include <dt-bindings/zmk/macros.h>
 
 / {
         behaviors {
@@ -20,6 +21,24 @@
                         bindings = <&kp>, <&kp>;
                 };
         };
+
+	macros {
+		// Lowercase
+		a_acute: a_acute { bindings = <&macro_press &kp LALT>, <&macro_tap &kp KP_N0 &kp KP_N2 &kp KP_N2 &kp KP_N5>, <&macro_release &kp LALT>; }; // 0225
+		e_acute: e_acute { bindings = <&macro_press &kp LALT>, <&macro_tap &kp KP_N0 &kp KP_N2 &kp KP_N3 &kp KP_N3>, <&macro_release &kp LALT>; }; // 0233
+		i_acute: i_acute { bindings = <&macro_press &kp LALT>, <&macro_tap &kp KP_N0 &kp KP_N2 &kp KP_N3 &kp KP_N7>, <&macro_release &kp LALT>; }; // 0237
+		o_acute: o_acute { bindings = <&macro_press &kp LALT>, <&macro_tap &kp KP_N0 &kp KP_N2 &kp KP_N4 &kp KP_N3>, <&macro_release &kp LALT>; }; // 0243
+		u_acute: u_acute { bindings = <&macro_press &kp LALT>, <&macro_tap &kp KP_N0 &kp KP_N2 &kp KP_N5 &kp KP_N0>, <&macro_release &kp LALT>; }; // 0250
+		n_tilde: n_tilde { bindings = <&macro_press &kp LALT>, <&macro_tap &kp KP_N0 &kp KP_N2 &kp KP_N4 &kp KP_N1>, <&macro_release &kp LALT>; }; // 0241
+
+		// Uppercase
+		A_ACUTE: A_ACUTE { bindings = <&macro_press &kp LALT>, <&macro_tap &kp KP_N0 &kp KP_N1 &kp KP_N9 &kp KP_N3>, <&macro_release &kp LALT>; }; // 0193
+		E_ACUTE: E_ACUTE { bindings = <&macro_press &kp LALT>, <&macro_tap &kp KP_N0 &kp KP_N2 &kp KP_N0 &kp KP_N1>, <&macro_release &kp LALT>; }; // 0201
+		I_ACUTE: I_ACUTE { bindings = <&macro_press &kp LALT>, <&macro_tap &kp KP_N0 &kp KP_N2 &kp KP_N0 &kp KP_N5>, <&macro_release &kp LALT>; }; // 0205
+		O_ACUTE: O_ACUTE { bindings = <&macro_press &kp LALT>, <&macro_tap &kp KP_N0 &kp KP_N2 &kp KP_N1 &kp KP_N1>, <&macro_release &kp LALT>; }; // 0211
+		U_ACUTE: U_ACUTE { bindings = <&macro_press &kp LALT>, <&macro_tap &kp KP_N0 &kp KP_N2 &kp KP_N1 &kp KP_N8>, <&macro_release &kp LALT>; }; // 0218
+		N_TILDE: N_TILDE { bindings = <&macro_press &kp LALT>, <&macro_tap &kp KP_N0 &kp KP_N2 &kp KP_N0 &kp KP_N9>, <&macro_release &kp LALT>; }; // 0209
+	    };
 
         keymap {
                 compatible = "zmk,keymap";
@@ -98,6 +117,22 @@
                                                &trans       &trans  &trans       &trans   &trans    &trans
     >;
                 };
+
+		accent_layer {
+// -----------------------------------------------------------------------------------------
+// |      |     |  é  |     |     |     |   |     |  ú  |  í  |  ó  |     |     |
+// |      |  á  |  ó  |  é  |  ú  |  í  |   |     |  ü  |     |  ñ  |     |     |
+// |      |     |     |     |     |     |   |  ñ  |     |     |     |     |     |
+//                    |     |     |     |   |     |     |     |
+
+    bindings = <
+       &to 0 &trans   &trans   &e_acute &trans   &trans     &trans   &u_acute &i_acute &o_acute &trans &trans
+       &to 1 &a_acute &o_acute &e_acute &u_acute &i_acute   &trans   &trans   &trans   &n_tilde &trans   &trans &trans
+       &to 2 &trans   &trans   &trans   &trans   &trans     &n_tilde &trans   &trans   &trans   &trans &trans
+                               &trans   &trans   &trans     &trans   &trans   &trans 
+
+     >;
+        };
 
         };
 };
